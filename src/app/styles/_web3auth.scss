@@ -197,9 +197,9 @@
 }
 .w3a-modal__loader {
   // display: none !important;
-  background-size: cover !important;
+  // background-size: cover !important;
   // background-image: url('../../assets/images/login-popup__background.png') !important;
-  background-color: #ffd011 !important;
+  // background-color: #ffd011 !important;
 }
 
 .w3a-modal__content,
@@ -258,17 +258,17 @@ img.w3a-header__logo {
   color: $light-grey !important;
 }
 .w3a-spinner {
-  background: conic-gradient(transparent, $yellow) !important;
+  // background: conic-gradient(transparent, $yellow) !important;
 }
 .w3a-spinner__mask {
-  background-color: $black !important;
+  // background-color: $black !important;
 }
 .w3a-spinner-message {
   // display: none !important;
   color: $white !important;
 }
 .w3a-spinner__head {
-  background-color: $yellow !important;
+  // background-color: $yellow !important;
 }
 .w3ajs-external-wallet {
   border: none !important;
