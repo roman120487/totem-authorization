@@ -253,22 +253,47 @@ img.w3a-header__logo {
   //   display: none !important;
   // }
 }
+
+// customise loader after click button
 .w3a-modal__loader-content {
   margin: auto !important;
   color: $light-grey !important;
+  .w3a-modal__loader-info {
+    order: 2;
+    .w3ajs-modal-loader__spinner {
+      background: none !important;
+      .w3a-spinner__mask {
+        display: none !important;
+      }
+      .w3a-spinner__head{
+        display: none;
+      }
+      &:nth-child(2) {
+        visibility: hidden;
+      }
+      &:before {
+        content: url("../../assets/images/svgs/spiner.svg");
+        width: 100% !important;
+        height: 100% !important;
+        position: inherit;
+        top: 10px;
+      }
+    }
+  }
+  .w3a-spinner-power {
+    order: 1;
+    img {
+      content: url("../../assets/images/mamont_loader.png");
+      height: 120px !important;
+    }
+  }
+  .w3a-spinner-power :nth-child(1) {
+    display: none !important;
+  }
 }
-.w3a-spinner {
-  // background: conic-gradient(transparent, $yellow) !important;
-}
-.w3a-spinner__mask {
-  // background-color: $black !important;
-}
+
 .w3a-spinner-message {
-  // display: none !important;
-  color: $white !important;
-}
-.w3a-spinner__head {
-  // background-color: $yellow !important;
+  display: none;
 }
 .w3ajs-external-wallet {
   border: none !important;
