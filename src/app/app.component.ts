@@ -22,7 +22,7 @@ export class AppComponent {
 
     ngOnInit() {
       this.route.queryParams.subscribe(params => {
-        console.log(params);
+        // console.log(params);
 
         this.redirectUrl = params[AUTH_ENUM.SUCCESS_URL];
       });
@@ -33,7 +33,7 @@ export class AppComponent {
       this.loading$.next(true);
       await this.web3auth.init();
       const isLoggedIn = this.web3auth.isLoggedIn();
-      console.log('data', isLoggedIn);
+      // console.log('data', isLoggedIn);
       if (isLoggedIn) {
         await this.getUserInfoViaWeb3();
         this.loading$.next(false);
@@ -53,18 +53,18 @@ export class AppComponent {
     async getUserInfoViaWeb3() {
       this.loggedIn = true;
       const userInfo: OpenLoginUser | undefined = await this.web3auth.getUserInfo();
-      console.log(userInfo);
+      // console.log(userInfo);
 
       let token = userInfo?.idToken;
       if(userInfo?.idToken) {
         // Social Wallets
         token = userInfo?.idToken;
-        console.log('USER ID TOKEN: ', token);
+        // console.log('USER ID TOKEN: ', token);
 
       } else {
         // External Wallets
         token = await this.web3auth.walletJWTToken();
-        console.log('meta token', token)
+        // console.log('meta token', token)
         //publicKey = this.parseJwt(token).wallets[0].address;
       }
       const jwt = token;
@@ -77,7 +77,7 @@ export class AppComponent {
       } */
       await this.web3auth.logout();
       localStorage.clear();
-      console.log(this.redirectUrl + `?${AUTH_ENUM.TOKEN}=${jwt}`);
+      // console.log(this.redirectUrl + `?${AUTH_ENUM.TOKEN}=${jwt}`);
       location.replace(this.redirectUrl + `?${AUTH_ENUM.TOKEN}=${jwt}`);
 
     }
